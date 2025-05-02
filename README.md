@@ -7,3 +7,5 @@ $ ./build/out
 ```
 
 > Hotreloading strategy taken from: https://github.com/tsoding/musializer
+
+> raylib: https://www.raylib.com/
