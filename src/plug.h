@@ -1,8 +1,5 @@
 #pragma once
 
-#define WINDOW_WIDTH  800
-#define WINDOW_HEIGHT 600
-
 typedef void  (*plug_init_t)(void);
 typedef void  (*plug_free_t)(void);
 typedef void  (*plug_frame_t)(void);

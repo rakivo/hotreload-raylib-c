@@ -35,6 +35,7 @@ bool plug_reload(void)
     TraceLog(LOG_ERROR, "HOTRELOAD: could not load plug DLL: %s", dlerror());
     return false;
   }
+
   dlerror();
 
   FN_SYM(plug_init,        libplug, return false);
@@ -51,14 +52,10 @@ bool plug_reload(void)
 int main(void)
 {
   SetTargetFPS(60);
-  SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-
-  InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "plug");
-
-  SetExitKey(KEY_Q);
-  SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
+  InitWindow(800, 600, "plug");
 
   if (!plug_reload()) return 1;
+
   plug_init();
 
   for (; !WindowShouldClose(); plug_frame()) {
@@ -70,7 +67,6 @@ int main(void)
   }
 
   plug_free();
-  CloseAudioDevice();
   CloseWindow();
 
   return 0;
