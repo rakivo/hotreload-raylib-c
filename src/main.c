@@ -8,7 +8,7 @@
 
 #include "plug.h"
 
-void* libplug;
+void *libplug;
 
 #define FN(name) name##_t name
 
